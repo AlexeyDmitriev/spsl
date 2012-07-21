@@ -82,4 +82,8 @@ public class Line {
         double det2 = -a * other.c + c * other.a;
         return new Point(det1 / det, det2 / det);
     }
+
+    public boolean contains(Point point) {
+        return Math.abs(a * point.x + b * point.y + c) < GeometryUtils.epsilon;
+    }
 }
