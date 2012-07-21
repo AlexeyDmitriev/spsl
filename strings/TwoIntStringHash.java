@@ -2,6 +2,8 @@ package strings;
 
 import numbers.IntegerUtils;
 
+import java.util.Random;
+
 /**
  * Created with IntelliJ IDEA.
  * User: riad
@@ -15,8 +17,13 @@ public class TwoIntStringHash extends AbstractStringHash {
     private static long[][] powers = new long[2][];
     private static long[][] reversePowers = new long[2][];
 
+    static private int genPrime(Random random) {
+        return (int) IntegerUtils.getNextPrime(random.nextInt((int) 1e9) + (int) (1e9));
+    }
+
     static {
-        mods = new int[]{(int) 1e9 + 7, (int) 1e9 + 9};
+        Random random = new Random();
+        mods = new int[]{genPrime(random), genPrime(random)};
         for (int i = 0; i < 2; ++i) {
             reverseMultiplier[i] = IntegerUtils.modInverse(multiplier, mods[i]);
         }
