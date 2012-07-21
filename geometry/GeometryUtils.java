@@ -5,9 +5,9 @@ package geometry;
  * User: riad
  */
 public class GeometryUtils {
-    static public double epsilon = 1e-9;
+    public static double epsilon = 1e-9;
 
-    static public double length(double... coordinates) {
+    public static double length(double... coordinates) {
         double sum = 0;
         for (double c : coordinates) {
             sum += c * c;

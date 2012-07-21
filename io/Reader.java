@@ -9,8 +9,8 @@ import java.util.StringTokenizer;
  * User: riad
  */
 public class Reader {
-    BufferedReader br;
-    StringTokenizer tokenizer;
+    private BufferedReader br;
+    private StringTokenizer tokenizer;
 
     public Reader(BufferedReader br) {
         this.br = br;

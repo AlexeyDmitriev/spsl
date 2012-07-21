@@ -17,7 +17,7 @@ public class TwoIntStringHash extends AbstractStringHash {
     private static long[][] powers = new long[2][];
     private static long[][] reversePowers = new long[2][];
 
-    static private int genPrime(Random random) {
+    private static int genPrime(Random random) {
         return (int) IntegerUtils.getNextPrime(random.nextInt((int) 1e9) + (int) (1e9));
     }
 
@@ -29,7 +29,7 @@ public class TwoIntStringHash extends AbstractStringHash {
         }
     }
 
-    TwoIntStringHash(CharSequence string) {
+    public TwoIntStringHash(CharSequence string) {
         int length = string.length();
         ensureLength(length);
         hash = new long[2][length + 1];

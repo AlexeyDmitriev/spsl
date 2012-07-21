@@ -5,7 +5,7 @@ package geometry;
  * User: riad
  */
 public class Line {
-    double a, b, c;
+    public double a, b, c;
 
     public Line(double a, double b, double c) {
         double h = GeometryUtils.length(a, b);
