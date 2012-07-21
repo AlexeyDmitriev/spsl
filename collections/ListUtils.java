@@ -11,7 +11,7 @@ import java.util.List;
  * User: riad
  */
 public class ListUtils {
-    static <E> void unique(List<E> list) {
+    public static <E> void unique(List<E> list) {
         int lastPasted = 0;
         for (int i = 1; i < list.size(); ++i) {
             if (!list.get(i).equals(list.get(lastPasted))) {
@@ -23,7 +23,7 @@ public class ListUtils {
             list.remove(list.size() - 1);
     }
 
-    static <E> List<E> filter(Iterable<E> list, Filter<E> filter) {
+    public static <E> List<E> filter(Iterable<E> list, Filter<E> filter) {
         List<E> result = new ArrayList<E>();
         for (E entry : list) {
             if (filter.accept(entry))
@@ -32,7 +32,7 @@ public class ListUtils {
         return result;
     }
 
-    static <V, A> List<V> apply(Iterable<A> list, Function<A, V> function) {
+    public static <V, A> List<V> apply(Iterable<A> list, Function<A, V> function) {
         List<V> result = new ArrayList<V>();
         for (A entry : list)
             result.add(function.apply(entry));
