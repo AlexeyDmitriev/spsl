@@ -22,4 +22,8 @@ public class Pair<F, S> implements Comparable<Pair<F, S>> {
             return res;
         return ((Comparable<S>) second).compareTo(other.second);
     }
+
+    public String toString() {
+        return "(" + first + "," + second + ")";
+    }
 }

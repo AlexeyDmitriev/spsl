@@ -50,9 +50,9 @@ public class Line {
 
         Line line = (Line) o;
 
-        if (Double.compare(line.a, a) != 0) return false;
-        if (Double.compare(line.b, b) != 0) return false;
-        if (Double.compare(line.c, c) != 0) return false;
+        if (Math.abs(line.a - a) > GeometryUtils.epsilon) return false;
+        if (Math.abs(line.b - b) > GeometryUtils.epsilon) return false;
+        if (Math.abs(line.c - c) > GeometryUtils.epsilon) return false;
 
         return true;
     }
