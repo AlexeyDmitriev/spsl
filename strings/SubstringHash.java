@@ -5,8 +5,8 @@ package strings;
  * User: riad
  */
 public class SubstringHash extends AbstractStringHash {
-    int from, to;
-    StringHash fullHash;
+    private int from, to;
+    private StringHash fullHash;
 
     public SubstringHash(StringHash fullHash, int from, int to) {
         this.fullHash = fullHash;

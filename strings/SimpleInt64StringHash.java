@@ -18,7 +18,7 @@ public class SimpleInt64StringHash extends AbstractStringHash {
     }
 
 
-    SimpleInt64StringHash(CharSequence string) {
+    public SimpleInt64StringHash(CharSequence string) {
         int length = string.length();
         ensureLength(length);
         hash = new long[length + 1];

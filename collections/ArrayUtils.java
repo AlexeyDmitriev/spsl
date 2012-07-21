@@ -9,43 +9,43 @@ import java.util.Comparator;
  * User: riad
  */
 public class ArrayUtils {
-    static public void sort(int[] array) {
+    public static void sort(int[] array) {
         Collections.sort(new Array.IntArray(array));
     }
 
-    static public void sort(double[] array) {
+    public static void sort(double[] array) {
         Collections.sort(new Array.DoubleArray(array));
     }
 
-    static public void sort(long[] array) {
+    public static void sort(long[] array) {
         Collections.sort(new Array.LongArray(array));
     }
 
-    static public void sort(char[] array) {
+    public static void sort(char[] array) {
         Collections.sort(new Array.CharArray(array));
     }
 
-    static public <T extends Comparable<? super T>> void sort(T[] array) {
+    public static <T extends Comparable<? super T>> void sort(T[] array) {
         Arrays.sort(array);
     }
 
-    static public void sort(int[] array, Comparator<Integer> comparator) {
+    public static void sort(int[] array, Comparator<Integer> comparator) {
         Collections.sort(new Array.IntArray(array), comparator);
     }
 
-    static public void sort(double[] array, Comparator<Double> comparator) {
+    public static void sort(double[] array, Comparator<Double> comparator) {
         Collections.sort(new Array.DoubleArray(array), comparator);
     }
 
-    static public void sort(long[] array, Comparator<Long> comparator) {
+    public static void sort(long[] array, Comparator<Long> comparator) {
         Collections.sort(new Array.LongArray(array), comparator);
     }
 
-    static public void sort(char[] array, Comparator<Character> comparator) {
+    public static void sort(char[] array, Comparator<Character> comparator) {
         Collections.sort(new Array.CharArray(array), comparator);
     }
 
-    static public <T> void sort(T[] array, Comparator<? super T> comparator) {
+    public static <T> void sort(T[] array, Comparator<? super T> comparator) {
         Arrays.sort(array, comparator);
     }
 }
