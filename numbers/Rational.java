@@ -71,7 +71,7 @@ public class Rational implements Comparable<Rational> {
     @Override
     public int hashCode() {
         int result = numerator.hashCode();
-        return 31 * result ^ denominator.hashCode();
+        return 31 * result + denominator.hashCode();
     }
 
     @Override
