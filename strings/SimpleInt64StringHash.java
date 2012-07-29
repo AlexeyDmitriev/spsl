@@ -29,7 +29,6 @@ public class SimpleInt64StringHash extends AbstractStringHash {
     }
 
     private static void ensureLength(int length) {
-        int oldLen = powers.length;
         powers = new long[length];
         reversePowers = new long[length];
         powers[0] = 1;
