@@ -18,6 +18,11 @@ public class IntegerUtils {
         return Math.abs(a);
     }
 
+    public static long lcm(long a, long b) {
+        long gcd = gcd(a, b);
+        return a / gcd * b;
+    }
+
     public static long power(long exponent, long power, long mod) {
         if (power == 0)
             return 1 % mod;
