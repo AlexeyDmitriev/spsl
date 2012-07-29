@@ -23,20 +23,20 @@ public class IntegerUtils {
         return a / gcd * b;
     }
 
-    public static long power(long exponent, long power, long mod) {
+    public static long power(long base, long power, long mod) {
         if (power == 0)
             return 1 % mod;
         if (power % 2 == 0)
-            return power(exponent * exponent % mod, power >> 1, mod);
-        return exponent * power(exponent, power - 1, mod) % mod;
+            return power(base * base % mod, power >> 1, mod);
+        return base * power(base, power - 1, mod) % mod;
     }
 
-    public static long power(long exponent, long power) {
+    public static long power(long base, long power) {
         if (power == 0)
             return 1;
         if (power % 2 == 0)
-            return power(exponent * exponent, power >> 1);
-        return exponent * power(exponent, power - 1);
+            return power(base * base, power >> 1);
+        return base * power(base, power - 1);
     }
 
     public static long modInverse(long number, long mod) {
