@@ -15,11 +15,6 @@ public class SubstringHash extends AbstractStringHash {
     }
 
     @Override
-    public long hash() {
-        return fullHash.hash(from, to);
-    }
-
-    @Override
     public long hash(int from, int to) {
         return fullHash.hash(this.from + from, this.from + to);
     }
