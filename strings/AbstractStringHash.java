@@ -4,7 +4,7 @@ package strings;
  * Created with IntelliJ IDEA.
  * User: riad
  */
-abstract public class AbstractStringHash implements StringHash {
+public abstract class AbstractStringHash implements StringHash {
     @Override
     public long hashFrom(int from) {
         return hash(from, length() - 1);
