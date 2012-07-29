@@ -48,4 +48,36 @@ public class ArrayUtils {
     public static <T> void sort(T[] array, Comparator<? super T> comparator) {
         Arrays.sort(array, comparator);
     }
+
+    /**
+     * @param array array to reverse
+     * @param from  inclusive
+     * @param to    exclusive
+     *              if (from == to) nothing happens
+     */
+    private static void reverse(int[] array, int from, int to) {
+        int length = to - from;
+        for (int i = 0; i < length / 2; ++i) {
+            int tmp = array[from + i];
+            array[from + i] = array[to - i - 1];
+            array[to - i - 1] = tmp;
+        }
+    }
+
+    public static boolean nextPermutation(int[] array) {
+        for (int i = array.length - 2; i >= 0; --i) {
+            if (array[i] < array[i + 1]) {
+                int lastGreater = i + 1;
+                while (lastGreater + 1 < array.length && array[lastGreater + 1] > array[i])
+                    ++lastGreater;
+                int tmp = array[i];
+                array[i] = array[lastGreater];
+                array[lastGreater] = tmp;
+                reverse(array, i + 1, array.length - 1);
+                return true;
+            }
+        }
+        reverse(array, 0, array.length - 1);
+        return false;
+    }
 }
