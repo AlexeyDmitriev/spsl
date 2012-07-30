@@ -9,29 +9,46 @@ import java.util.StringTokenizer;
  * User: riad
  */
 public class Reader {
-    private BufferedReader br;
+    private BufferedReader reader;
     private StringTokenizer tokenizer;
 
-    public Reader(BufferedReader br) {
-        this.br = br;
+    public Reader(BufferedReader reader) {
+        this.reader = reader;
     }
 
-    public String nextString() throws IOException {
+    public String nextString() {
         while (tokenizer == null || !tokenizer.hasMoreTokens()) {
-            tokenizer = new StringTokenizer(br.readLine());
+            tokenizer = new StringTokenizer(readLine());
         }
         return tokenizer.nextToken();
     }
 
-    public int nextInt() throws IOException {
+    public int nextInt() {
         return Integer.parseInt(nextString());
     }
 
-    public double nextDouble() throws IOException {
+    public double nextDouble() {
         return Double.parseDouble(nextString());
     }
 
-    public long nextLong() throws IOException {
+    public long nextLong() {
         return Long.parseLong(nextString());
+    }
+
+    public String next() {
+        return nextString();
+    }
+
+    public String nextLine() {
+        tokenizer = null;
+        return readLine();
+    }
+
+    private String readLine() {
+        try {
+            return reader.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
