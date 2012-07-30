@@ -16,22 +16,30 @@ public class Reader {
         this.br = br;
     }
 
-    public String nextString() throws IOException {
+    public String nextString() {
         while (tokenizer == null || !tokenizer.hasMoreTokens()) {
-            tokenizer = new StringTokenizer(br.readLine());
+            try {
+                tokenizer = new StringTokenizer(br.readLine());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
         return tokenizer.nextToken();
     }
 
-    public int nextInt() throws IOException {
+    public int nextInt() {
         return Integer.parseInt(nextString());
     }
 
-    public double nextDouble() throws IOException {
+    public double nextDouble() {
         return Double.parseDouble(nextString());
     }
 
-    public long nextLong() throws IOException {
+    public long nextLong() {
         return Long.parseLong(nextString());
+    }
+
+    public String next() {
+        return nextString();
     }
 }
