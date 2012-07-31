@@ -66,4 +66,14 @@ public class Point {
         return "(" + x + ", " + y + ")";
     }
 
+    public Point rotate(double angle) {
+        double cos = Math.cos(angle);
+        double sin = Math.sin(angle);
+        return new Point(x * cos - y * sin, x * sin + y * cos);
+    }
+
+    public Point rotate(double angle, Point center) {
+        return center.add(this.subtract(center).rotate(angle));
+    }
+
 }
