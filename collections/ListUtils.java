@@ -39,4 +39,24 @@ public class ListUtils {
 
         return result;
     }
+
+    public static <E> int count(Iterable<E> list, E value) {
+        int result = 0;
+        for (E entry : list) {
+            if (entry.equals(value)) {
+                ++result;
+            }
+        }
+        return result;
+    }
+
+    public static <E> int count(Iterable<E> list, Filter<E> filter) {
+        int result = 0;
+        for (E entry : list) {
+            if (filter.accept(entry)) {
+                ++result;
+            }
+        }
+        return result;
+    }
 }
