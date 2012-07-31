@@ -1,7 +1,5 @@
 package collections.array;
 
-import collections.Array;
-
 /**
  * Created with IntelliJ IDEA.
  * User: riad

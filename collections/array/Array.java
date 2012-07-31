@@ -1,4 +1,4 @@
-package collections;
+package collections.array;
 
 import java.util.AbstractList;
 import java.util.RandomAccess;

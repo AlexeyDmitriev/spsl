@@ -1,12 +1,10 @@
 package collections.array;
 
-import java.util.AbstractList;
-
 /**
  * Created with IntelliJ IDEA.
  * User: riad
  */
-public class ObjectArray<T> extends AbstractList<T> {
+public class ObjectArray<T> extends Array<T> {
     private final T[] array;
 
     public ObjectArray(T[] array) {
