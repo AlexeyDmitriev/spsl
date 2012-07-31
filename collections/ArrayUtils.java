@@ -1,5 +1,10 @@
 package collections;
 
+import collections.array.CharArray;
+import collections.array.DoubleArray;
+import collections.array.IntArray;
+import collections.array.LongArray;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -10,19 +15,19 @@ import java.util.Comparator;
  */
 public class ArrayUtils {
     public static void sort(int[] array) {
-        Collections.sort(new Array.IntArray(array));
+        Collections.sort(new IntArray(array));
     }
 
     public static void sort(double[] array) {
-        Collections.sort(new Array.DoubleArray(array));
+        Collections.sort(new DoubleArray(array));
     }
 
     public static void sort(long[] array) {
-        Collections.sort(new Array.LongArray(array));
+        Collections.sort(new LongArray(array));
     }
 
     public static void sort(char[] array) {
-        Collections.sort(new Array.CharArray(array));
+        Collections.sort(new CharArray(array));
     }
 
     public static <T extends Comparable<? super T>> void sort(T[] array) {
@@ -30,19 +35,19 @@ public class ArrayUtils {
     }
 
     public static void sort(int[] array, Comparator<Integer> comparator) {
-        Collections.sort(new Array.IntArray(array), comparator);
+        Collections.sort(new IntArray(array), comparator);
     }
 
     public static void sort(double[] array, Comparator<Double> comparator) {
-        Collections.sort(new Array.DoubleArray(array), comparator);
+        Collections.sort(new DoubleArray(array), comparator);
     }
 
     public static void sort(long[] array, Comparator<Long> comparator) {
-        Collections.sort(new Array.LongArray(array), comparator);
+        Collections.sort(new LongArray(array), comparator);
     }
 
     public static void sort(char[] array, Comparator<Character> comparator) {
-        Collections.sort(new Array.CharArray(array), comparator);
+        Collections.sort(new CharArray(array), comparator);
     }
 
     public static <T> void sort(T[] array, Comparator<? super T> comparator) {
