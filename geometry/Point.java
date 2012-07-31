@@ -1,10 +1,24 @@
 package geometry;
 
+import java.util.Comparator;
+
 /**
  * Created with IntelliJ IDEA.
  * User: riad
  */
 public class Point {
+    public static final Comparator<Point> LEXICOGRAPHICAL_COMPARATOR = new Comparator<Point>() {
+        @Override
+        public int compare(Point left, Point right) {
+            return (int) Math.signum(left.x == right.x ? left.y - right.y : left.x - right.x);
+        }
+    };
+    public static final Comparator<Point> ANGLE_COMPARATOR = new Comparator<Point>() {
+        @Override
+        public int compare(Point left, Point right) {
+            return (int) Math.signum(left.angle() - right.angle());
+        }
+    };
     public double x, y;
 
     public Point(double x, double y) {
