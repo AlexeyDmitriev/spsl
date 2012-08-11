@@ -50,6 +50,30 @@ public class Reader {
         return readLine();
     }
 
+    public int[] nextIntArray(int size) {
+        int[] array = new int[size];
+        for (int i = 0; i < size; ++i) {
+            array[i] = nextInt();
+        }
+        return array;
+    }
+
+    public long[] nextLongArray(int size) {
+        long[] array = new long[size];
+        for (int i = 0; i < size; ++i) {
+            array[i] = nextLong();
+        }
+        return array;
+    }
+
+    public String[] nextStringArray(int size) {
+        String[] array = new String[size];
+        for (int i = 0; i < size; ++i) {
+            array[i] = nextString();
+        }
+        return array;
+    }
+
     private String readLine() {
         try {
             return reader.readLine();
