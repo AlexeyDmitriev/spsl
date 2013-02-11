@@ -2,13 +2,6 @@ package numbers;
 
 import java.math.BigInteger;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Abra
- * Date: 7/22/12
- * Time: 3:26 AM
- * To change this template use File | Settings | File Templates.
- */
 public class Rational implements Comparable<Rational> {
     public BigInteger numerator, denominator;
 
@@ -24,13 +17,18 @@ public class Rational implements Comparable<Rational> {
         }
     }
 
-    public Rational(int numerator) {
-        this.numerator = BigInteger.valueOf(numerator);
-        this.denominator = BigInteger.ONE;
-    }
+	public Rational(BigInteger numerator) {
+		this.numerator = numerator;
+		this.denominator = BigInteger.ONE;
+	}
 
 
-    public Rational add(Rational r) {
+	public Rational(long numerator) {
+		this(BigInteger.valueOf(numerator));
+	}
+
+
+	public Rational add(Rational r) {
         BigInteger y = denominator.multiply(r.denominator).divide(denominator.gcd(r.denominator));
         BigInteger x = numerator.multiply(y.divide(denominator)).add(r.numerator.multiply(y.divide(r.denominator)));
         return new Rational(x, y);

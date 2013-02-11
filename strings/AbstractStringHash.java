@@ -1,18 +1,15 @@
 package strings;
 
-/**
- * Created with IntelliJ IDEA.
- * User: riad
- */
+
 public abstract class AbstractStringHash implements StringHash {
     @Override
     public long hashFrom(int from) {
-        return hash(from, length() - 1);
+        return hash(from, length());
     }
 
     @Override
     public long hash() {
-        return hash(0, length() - 1);
+        return hash(0, length());
     }
 
     @Override

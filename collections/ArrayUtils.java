@@ -73,16 +73,29 @@ public class ArrayUtils {
         for (int i = array.length - 2; i >= 0; --i) {
             if (array[i] < array[i + 1]) {
                 int lastGreater = i + 1;
-                while (lastGreater + 1 < array.length && array[lastGreater + 1] > array[i])
+                while (lastGreater + 1 < array.length && array[lastGreater + 1] > array[i]) {
                     ++lastGreater;
+                }
                 int tmp = array[i];
                 array[i] = array[lastGreater];
                 array[lastGreater] = tmp;
-                reverse(array, i + 1, array.length - 1);
+                reverse(array, i + 1, array.length);
                 return true;
             }
         }
         reverse(array, 0, array.length - 1);
         return false;
     }
+
+	public static int upperBound(long[] a, long v){
+		int l = -1, r = a.length;
+		while(l + 1< r){
+			int c = l + (r - l) / 2;
+			if(a[c] > v)
+				r = c;
+			else
+				l = c;
+		}
+		return r;
+	}
 }

@@ -1,9 +1,5 @@
 package strings;
 
-/**
- * Created with IntelliJ IDEA.
- * User: riad
- */
 public interface StringHash {
     public long hash();
 

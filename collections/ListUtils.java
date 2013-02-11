@@ -11,6 +11,31 @@ import java.util.List;
  * User: riad
  */
 public class ListUtils {
+
+	public static int sum(Iterable<Integer> list){
+		int sum = 0;
+		for(Integer i: list){
+			sum += i;
+		}
+		return sum;
+	}
+
+	public static int min(Iterable<Integer> list){
+		int min = Integer.MAX_VALUE;
+		for (Integer i : list) {
+			min = Math.min(i, min);
+		}
+		return min;
+	}
+
+	public static int max(Iterable<Integer> list){
+		int max = Integer.MIN_VALUE;
+		for (Integer i : list) {
+			max = Math.max(i, max);
+		}
+		return max;
+	}
+
     public static <E> void unique(List<E> list) {
         int lastPasted = 0;
         for (int i = 1; i < list.size(); ++i) {

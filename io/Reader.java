@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.InputMismatchException;
 import java.util.StringTokenizer;
 
 /**
@@ -56,6 +57,32 @@ public class Reader {
             array[i] = nextInt();
         }
         return array;
+    }
+
+    public void nextIntArrays(int[]... arrays) {
+        for (int i = 1; i < arrays.length; ++i) {
+            if (arrays[i].length != arrays[0].length) {
+                throw new InputMismatchException("Lengths are different");
+            }
+        }
+        for (int i = 0; i < arrays[0].length; ++i) {
+            for (int[] array : arrays) {
+                array[i] = nextInt();
+            }
+        }
+    }
+
+    public void nextLongArrays(long[]... arrays) {
+        for (int i = 1; i < arrays.length; ++i) {
+            if (arrays[i].length != arrays[0].length) {
+                throw new InputMismatchException("Lengths are different");
+            }
+        }
+        for (int i = 0; i < arrays[0].length; ++i) {
+            for (long[] array : arrays) {
+                array[i] = nextLong();
+            }
+        }
     }
 
     public long[] nextLongArray(int size) {

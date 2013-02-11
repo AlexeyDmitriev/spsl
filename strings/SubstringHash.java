@@ -1,9 +1,5 @@
 package strings;
 
-/**
- * Created with IntelliJ IDEA.
- * User: riad
- */
 public class SubstringHash extends AbstractStringHash {
     private int from, to;
     private StringHash fullHash;
@@ -21,6 +17,6 @@ public class SubstringHash extends AbstractStringHash {
 
     @Override
     public int length() {
-        return to - from + 1;
+        return to - from;
     }
 }
