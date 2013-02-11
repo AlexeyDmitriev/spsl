@@ -83,7 +83,7 @@ public class ArrayUtils {
                 return true;
             }
         }
-        reverse(array, 0, array.length - 1);
+        reverse(array, 0, array.length);
         return false;
     }
 
