@@ -98,4 +98,40 @@ public class ArrayUtils {
 		}
 		return r;
 	}
+
+    public static int lowerBound(long[] a, long v) {
+        int l = -1, r = a.length;
+        while(l + 1< r){
+            int c = l + (r - l) / 2;
+            if(a[c] >= v)
+                r = c;
+            else
+                l = c;
+        }
+        return r;
+    }
+
+    public static int upperBound(double[] a, double v) {
+        int l = -1, r = a.length;
+        while(l + 1< r){
+            int c = l + (r - l) / 2;
+            if(a[c] > v)
+                r = c;
+            else
+                l = c;
+        }
+        return r;
+    }
+
+    public static int lowerBound(double[] a, double v) {
+        int l = -1, r = a.length;
+        while(l + 1< r){
+            int c = l + (r - l) / 2;
+            if(a[c] >= v)
+                r = c;
+            else
+                l = c;
+        }
+        return r;
+    }
 }

@@ -27,6 +27,10 @@ public class Rational implements Comparable<Rational> {
 		this(BigInteger.valueOf(numerator));
 	}
 
+	public Rational(long numerator, long denominator) {
+		this(BigInteger.valueOf(numerator), BigInteger.valueOf(denominator)) ;
+	}
+
 
 	public Rational add(Rational r) {
         BigInteger y = denominator.multiply(r.denominator).divide(denominator.gcd(r.denominator));
@@ -81,4 +85,15 @@ public class Rational implements Comparable<Rational> {
         Rational r = (Rational) obj;
         return numerator.equals(r.numerator) && denominator.equals(r.denominator);
     }
+
+	public BigInteger ceil() {
+		BigInteger[] dr = numerator.divideAndRemainder(denominator);
+		if(!dr[1].equals(BigInteger.ZERO))
+			dr[0] = dr[0].add(BigInteger.ONE);
+		return dr[0];
+	}
+
+	public BigInteger floor() {
+		return numerator.divide(denominator);
+	}
 }

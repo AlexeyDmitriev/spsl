@@ -97,7 +97,7 @@ public class IntegerUtils {
 			a = b;
 			b = tmp;
 		}
-		return a;
+		return Math.abs(a);
 	}
 
 	public static long lcm(long a, long b) {
