@@ -1,4 +1,4 @@
-package collections.array;
+package collections;
 
 import java.util.TreeMap;
 

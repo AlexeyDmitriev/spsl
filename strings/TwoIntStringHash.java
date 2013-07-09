@@ -33,6 +33,8 @@ public class TwoIntStringHash extends AbstractStringHash {
     }
 
     private void ensureLength(int length) {
+        if(powers[0] != null && length + 1 <= powers[0].length)
+            return;
 		powers = new long[2][length + 1];
         for (int i = 0; i < 2; ++i) {
             powers[i][0] = 1;

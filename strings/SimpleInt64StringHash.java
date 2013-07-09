@@ -1,7 +1,5 @@
 package strings;
 
-import numbers.IntegerUtils;
-
 public class SimpleInt64StringHash extends AbstractStringHash {
     private long[] hash;
     private static long[] powers;
@@ -18,6 +16,8 @@ public class SimpleInt64StringHash extends AbstractStringHash {
     }
 
     private static void ensureLength(int length) {
+        if(powers != null && length + 1 <= powers.length)
+            return;
         powers = new long[length + 1];
         powers[0] = 1;
 
