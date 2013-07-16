@@ -88,12 +88,19 @@ public class Rational implements Comparable<Rational> {
 
 	public BigInteger ceil() {
 		BigInteger[] dr = numerator.divideAndRemainder(denominator);
-		if(!dr[1].equals(BigInteger.ZERO))
-			dr[0] = dr[0].add(BigInteger.ONE);
+		if(!dr[1].equals(BigInteger.ZERO)) {
+            if(numerator.compareTo(BigInteger.ZERO) > 0)
+			    dr[0] = dr[0].add(BigInteger.ONE);
+        }
 		return dr[0];
 	}
 
 	public BigInteger floor() {
-		return numerator.divide(denominator);
+        BigInteger[] dr = numerator.divideAndRemainder(denominator);
+        if(!dr[1].equals(BigInteger.ZERO)) {
+            if(numerator.compareTo(BigInteger.ZERO) < 0)
+                dr[0] = dr[0].subtract(BigInteger.ONE);
+        }
+        return dr[0];
 	}
 }
