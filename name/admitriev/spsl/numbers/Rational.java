@@ -11,9 +11,9 @@ public class Rational implements Comparable<Rational> {
         BigInteger gcd = numerator.gcd(denominator);
         this.numerator = numerator.divide(gcd);
         this.denominator = denominator.divide(gcd);
-        if (denominator.compareTo(BigInteger.ZERO) < 0) {
-            this.numerator = numerator.negate();
-            this.denominator = denominator.negate();
+        if (this.denominator.compareTo(BigInteger.ZERO) < 0) {
+            this.numerator = this.numerator.negate();
+            this.denominator = this.denominator.negate();
         }
     }
 
@@ -33,7 +33,7 @@ public class Rational implements Comparable<Rational> {
 
 
 	public Rational add(Rational r) {
-        BigInteger y = denominator.multiply(r.denominator).divide(denominator.gcd(r.denominator));
+        BigInteger y = denominator.divide(denominator.gcd(r.denominator)).multiply(r.denominator);
         BigInteger x = numerator.multiply(y.divide(denominator)).add(r.numerator.multiply(y.divide(r.denominator)));
         return new Rational(x, y);
     }
