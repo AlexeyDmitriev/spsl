@@ -1,8 +1,8 @@
 package name.admitriev.spsl.collections;
 
-import java.util.HashMap;
+import java.util.TreeMap;
 
-public class Counter<T> extends HashMap<T, Long> {
+public class Counter<T> extends TreeMap<T, Long> {
     public void add(T key) {
         add(key, 1);
     }
