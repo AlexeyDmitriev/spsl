@@ -12,8 +12,8 @@ import java.util.List;
  */
 public class ListUtils {
 
-	public static int sum(Iterable<Integer> list){
-		int sum = 0;
+	public static long sum(Iterable<Integer> list){
+		long sum = 0;
 		for(Integer i: list){
 			sum += i;
 		}
