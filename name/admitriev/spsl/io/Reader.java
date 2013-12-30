@@ -51,6 +51,14 @@ public class Reader {
         return readLine();
     }
 
+    public String[] nextLineArray(int size) {
+        String[] array = new String[size];
+        for(int i = 0; i < size; ++i) {
+            array[i] = nextLine();
+        }
+        return array;
+    }
+
     public int[] nextIntArray(int size) {
         int[] array = new int[size];
         for (int i = 0; i < size; ++i) {
