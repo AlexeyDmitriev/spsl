@@ -2,6 +2,7 @@ package name.admitriev.spsl.io;
 
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.io.Writer;
 
 public class OutputWriter extends PrintWriter {
 
@@ -9,7 +10,7 @@ public class OutputWriter extends PrintWriter {
 		super(out);
 	}
 
-	public OutputWriter(java.io.Writer writer){
+	public OutputWriter(Writer writer){
 		super(writer);
 	}
 
